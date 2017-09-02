@@ -20,7 +20,7 @@
             margin: 0 2rem;
         }
         main {
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
         footer {
             text-align: center;
@@ -66,7 +66,6 @@
     <div id="result"></div>
 </main>
 <footer>By <a href="https://github.com/CoryRay" target="_blank" rel="noopener">Cory Rodriguez</a></footer>
-<script src="/js/jsbn--money-math.js"></script>
 <script>
     'use strict';
 
@@ -74,20 +73,20 @@
         event.preventDefault();
 
         const units  = document.getElementById('units').value;
-        const price  = document.getElementById('price').value;
+        const price  = document.getElementById('price').value * 100;
         const units2 = document.getElementById('units2').value;
-        const price2 = document.getElementById('price2').value;
+        const price2 = document.getElementById('price2').value * 100;
 
         // const REGEX = /\d+\.\d{2}/;
 
-        const cpu1 = Money.div(units, price);
-        const cpu2 = Money.div(units2, price2);
+        const cpu1 = price / units / 100;
+        const cpu2 = price2 / units2 / 100;
 
         const resultsContainer = document.getElementById('result');
 
         resultsContainer.innerHTML =
-        `<p>Product 1 is <mark>${cpu1}</mark>.</p>
-         <p>Product 2 is <mark>${cpu2}</mark>.</p>`;
+        `<p>Product 1 unit price is <mark>&#36;${cpu1}</mark>.</p>
+         <p>Product 2 unit price is <mark>&#36;${cpu2}</mark>.</p>`;
     })
 </script>
 </body>
