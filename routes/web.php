@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/calc', function () {
-    return view('calculate');
-});
+Route::view('/calc', 'calculate');
