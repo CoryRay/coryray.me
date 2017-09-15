@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::view('/calc', 'calculate');
+
+Route::get('/twitchlist', 'PageController@twitchlist');
