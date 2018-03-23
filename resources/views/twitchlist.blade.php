@@ -50,7 +50,7 @@
         @foreach ($videos as $video)
             <li data-recorded-at="{{ Carbon\Carbon::parse($video->recorded_at)->format('M d') }}">
                 <a href="{{ $video->url }}">{{ $video->title }}</a>
-                &mdash; <time>{{ gmdate("g:i:s", $video->length) }}</time>
+                &mdash; <time>{{ gmdate("H:i:s", $video->length) }}</time>
             </li>
         @endforeach
     </ol>
