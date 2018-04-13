@@ -83,15 +83,20 @@ class PlantController extends Controller
      */
     public function update(Request $request, Plant $plant)
     {
-        // $validatedData = $request->validate([
-        //     'species' => 'required|max:255',
-        //     'name'    => 'nullable|max:255',
-        //     'comment' => 'nullable',
-        // ]);
+        $validatedData = $request->validate([
+            'species'  => 'required|max:255',
+            'name'     => 'nullable|max:255',
+            'location' => 'nullable|max:255',
+            'comment'  => 'nullable',
+        ]);
 
-        // Plant::create($validatedData);
+        $plant->species  = $request->species;
+        $plant->name     = $request->name;
+        $plant->location = $request->location;
+        $plant->comment  = $request->comment;
+        $plant->save();
 
-        // return redirect()->route('plants.index');
+        return redirect()->route('plants.show', $plant);
     }
 
     /**

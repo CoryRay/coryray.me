@@ -2,10 +2,11 @@
 @section('title', 'Edit')
 @section('content')
 <div class="container">
-    <p><a href="{{ route('plants.show', ['plant' => $plant]) }}">&larr; Back to {{ $plant->species }}</a></p>
+    <p><a href="{{ route('plants.show', $plant) }}">&larr; Back to {{ $plant->species }}</a></p>
     <h1>Edit me</h1>
 
-    <form action="/plants" method="POST">
+    <form action="{{ route('plants.update', $plant) }}" method="POST">
+    @method('PUT')
     @include('plants.partials.form-fields', ['buttonText' => 'Submit edits'])
     </form>
 </div>
