@@ -2,23 +2,23 @@
 <fieldset>
     <legend>plant info</legend>
 
-    <div>
+    <div class="form-row">
         <label for="species">Species</label>
-        <input type="text" name="species" id="species" value="{{ $plant->species }}" required>
+        <input type="text" name="species" id="species" value="{{ $plant->species }}" maxlength="255" required>
     </div>
 
-    <div>
-        <label for="name">name</label>
-        <input type="text" name="name" id="name" value="{{ $plant->name }}">
+    <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{ $plant->name }}" maxlength="255">
     </div>
 
-    <div>
-        <label for="location">location</label>
-        <input type="text" name="location" id="location" value="{{ $plant->location }}">
+    <div class="form-row">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" value="{{ $plant->location }}" maxlength="255">
     </div>
 
-    <div>
-        <label for="comment">comment</label>
+    <div class="form-row">
+        <label for="comment">Comment</label>
         <textarea name="comment" id="comment" cols="30" rows="3">{{ $plant->comment }}</textarea>
     </div>
 

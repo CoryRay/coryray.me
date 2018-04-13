@@ -50,3 +50,15 @@ dl {
     color: #f0f0f0;
     padding: .5rem;
 }
+
+.form-row {
+    margin-bottom: .5rem;
+
+    label::after {
+        content: ': ';
+    }
+
+    input, textarea, select {
+        width: 50%
+    }
+}
