@@ -14,7 +14,9 @@ class PlantController extends Controller
      */
     public function index()
     {
-        $plants = Plant::with('waterings:id,plant_id,created_at')->get();
+        $plants = Plant::with('waterings:id,plant_id,created_at')
+                  ->orderBy('species', 'asc')
+                  ->get();
         return view('plants.index')->with('plants', $plants);
     }
 
