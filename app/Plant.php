@@ -18,6 +18,6 @@ class Plant extends Model
      */
     public function waterings()
     {
-        return $this->hasMany('App\Watering')->orderBy('created_at', 'desc');
+        return $this->hasMany('App\Watering')->latest();
     }
 }
