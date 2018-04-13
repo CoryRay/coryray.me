@@ -16,3 +16,9 @@ Route::view('/', 'welcome');
 Route::view('/calc', 'calculate');
 
 Route::get('/twitchlist', 'PageController@twitchlist');
+
+Route::resource('plants', 'PlantController');
+
+Route::resource('waterings', 'WateringController')->only([
+    'store'
+]);
