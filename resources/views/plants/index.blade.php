@@ -8,6 +8,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Common Name</th>
                 <th>Species</th>
                 <th>Location</th>
                 <th>Last Water</th>
@@ -17,6 +18,7 @@
         <tbody>
             @foreach($plants as $plant)
             <tr>
+                <td>{{ $plant->common_name }}</td>
                 <td>{{ $plant->species }}</td>
                 <td>{{ $plant->location }}</td>
                 @if(count($plant->waterings))

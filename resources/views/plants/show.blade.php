@@ -6,19 +6,20 @@
     <h1>{{ $plant->species }}</h1>
     <p><a href="{{ route('plants.edit', $plant) }}">edit</a></p>
     <dl>
-        <dt>name</dt>
-        <dd>{{ $plant->name }}</dd>
-
         <dt>added</dt>
         <dd>{{ $plant->created_at }}</dd>
 
-        <dt>comment</dt>
-        <dd>{{ $plant->comment }}</dd>
+        <dt>common name</dt>
+        <dd>{{ $plant->common_name }}</dd>
+
+        <dt>nickname</dt>
+        <dd>{{ $plant->nickname }}</dd>
 
         <dt>location</dt>
         <dd>{{ $plant->location }}</dd>
 
-        <!-- Other terms and descriptions -->
+        <dt>comment</dt>
+        <dd>{{ $plant->comment }}</dd>
     </dl>
 
     <h2>previous waterings</h2>

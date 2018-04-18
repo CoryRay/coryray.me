@@ -41,10 +41,11 @@ class PlantController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'species'  => 'required|max:255',
-            'name'     => 'nullable|max:255',
-            'location' => 'nullable|max:255',
-            'comment'  => 'nullable',
+            'species'     => 'nullable|max:255',
+            'common_name' => 'nullable|max:255',
+            'nickname'    => 'nullable|max:255',
+            'location'    => 'nullable|max:255',
+            'comment'     => 'nullable',
         ]);
 
         Plant::create($validatedData);
@@ -84,16 +85,17 @@ class PlantController extends Controller
     public function update(Request $request, Plant $plant)
     {
         $validatedData = $request->validate([
-            'species'  => 'required|max:255',
-            'name'     => 'nullable|max:255',
-            'location' => 'nullable|max:255',
-            'comment'  => 'nullable',
+            'species'     => 'nullable|max:255',
+            'common_name' => 'nullable|max:255',
+            'nickname'    => 'nullable|max:255',
+            'location'    => 'nullable|max:255',
+            'comment'     => 'nullable',
         ]);
 
-        $plant->species  = $request->species;
-        $plant->name     = $request->name;
-        $plant->location = $request->location;
-        $plant->comment  = $request->comment;
+        $plant->species     = $request->species;
+        $plant->common_name = $request->common_name;
+        $plant->location    = $request->location;
+        $plant->comment     = $request->comment;
         $plant->save();
 
         return redirect()->route('plants.show', $plant);
