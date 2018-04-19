@@ -9,8 +9,9 @@
         <thead>
             <tr>
                 <th>Common Name</th>
-                <th>Species</th>
                 <th>Location</th>
+                <th>Species</th>
+                {{-- <th>Nickname</th> --}}
                 <th>Last Water</th>
                 <th>More</th>
             </tr>
@@ -19,8 +20,9 @@
             @foreach($plants as $plant)
             <tr>
                 <td>{{ $plant->common_name }}</td>
-                <td>{{ $plant->species }}</td>
                 <td>{{ $plant->location }}</td>
+                <td>{{ $plant->species }}</td>
+                {{-- <td>{{ $plant->nickname }}</td> --}}
                 @if(count($plant->waterings))
                 <td>{{ $plant->waterings[0]->created_at->toFormattedDateString() }}</td>
                 @else
