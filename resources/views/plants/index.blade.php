@@ -24,7 +24,7 @@
                 <td>{{ $plant->species }}</td>
                 {{-- <td>{{ $plant->nickname }}</td> --}}
                 @if(count($plant->waterings))
-                <td>{{ $plant->waterings[0]->created_at->toFormattedDateString() }}</td>
+                <td>{{ $plant->waterings[0]->created_at->diffForHumans() }} &mdash; {{ $plant->waterings[0]->created_at->format('M j') }}</td>
                 @else
                 <td></td>
                 @endif
